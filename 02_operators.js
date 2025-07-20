@@ -52,3 +52,9 @@ console.log(finalName);
 //* 1> TypeOf
 //* 2> ++
 //* 3> --
+
+let var1 = 2;
+var1++
+var1--;
+var1--;
+console.log(var1);
