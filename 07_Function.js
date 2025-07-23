@@ -42,6 +42,6 @@ function adder(a,b = 0){ // default paramter as b = 0
 let totalSum = adder(10,20);    
 console.log(totalSum);
 
-// setTimeout(function(name){
-//     console.log("Hi there")
-// },2000);    
+setTimeout(function(name){
+    console.log("Hi there")
+},2000);    
