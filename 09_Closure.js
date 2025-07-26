@@ -18,7 +18,7 @@ function createCounter(){
 let counter = createCounter();
 counter();
 counter();
-// console.log(count);
+// console.log(count); // error
 
 /*
 * A Closure happens when a function remembers variables from its 
