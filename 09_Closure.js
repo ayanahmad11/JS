@@ -19,7 +19,18 @@ let counter = createCounter();
 counter();
 counter();
 // console.log(count); // error
+let message = "Global message"
 
+function showMessage(){
+    let message = "Local Message"
+    console.log(`Inside function : ${message}`)
+}
+showMessage()
+console.log(`Outside function: ${message}`);
+/*
+*There are two variables named message: one global and one local to the showMessage function.
+*Inside the function, the local variable takes precedence, and outside the function, the global variable is used. This demonstrates scope in action
+*/
 /* 
 ? Closure
 * A Closure happens when a function remembers variables from its 
