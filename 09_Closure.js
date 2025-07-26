@@ -20,7 +20,8 @@ counter();
 counter();
 // console.log(count); // error
 
-/*
+/* 
+? Closure
 * A Closure happens when a function remembers variables from its 
 * outer scope , even after that outer scope has finished executing.
 * Closures are one of Javascript's most powerful features.
