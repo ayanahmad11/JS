@@ -14,6 +14,8 @@ const timeoutId =  setTimeout(()=>{
     console.log("Inside Timeout");
 })
 
+console.log(timeoutId);
+
 clearTimeout(timeoutId);
 
 // Synchronous code.

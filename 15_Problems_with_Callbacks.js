@@ -1,3 +1,12 @@
+//?  "Pyramid of Doom,"
+/* 
+* Callback Hell, also known as "Pyramid of Doom," 
+* is a common problem in asynchronous JavaScript. 
+* This occurs when callbacks are nested within other
+* callbacks several levels deep,
+* making the code hard to read and maintain.
+*/
+
 function getUser(userId,callback){
     // Db calling --> time lagta hai
     // the setTimeout function is to show delay as
