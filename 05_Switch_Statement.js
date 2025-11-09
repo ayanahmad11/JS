@@ -28,7 +28,7 @@ switch(today){
 //*Switch statements only compare equality.
 //* You cannot use operators like >, <, or >= directly.
 
-let Animal = "cat";
+let Animal = "horse";
 switch(Animal){
     case "cat":
         console.log("meow")
@@ -38,6 +38,7 @@ switch(Animal){
         break;
     case "horse":
         console.log("neigh")
+        break;
     default:
         console.log("Unknown Sound")
         break;
@@ -59,4 +60,5 @@ switch (day) {
     break;
   default:
     console.log("Invalid day");
+    break;
 }

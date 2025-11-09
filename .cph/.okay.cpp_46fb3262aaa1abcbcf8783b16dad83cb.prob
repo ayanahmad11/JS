@@ -1,0 +1,1 @@
+{"name":"Local: okay","url":"/Users/ayanahmed/Desktop/webdev/JS/okay.cpp","tests":[{"id":1754405737727,"input":"3\n3\n1 5 3\n4\n8 6 1 1\n7\n1 2 3 4 6 3 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ayanahmed/Desktop/webdev/JS/okay.cpp","group":"local","local":true}

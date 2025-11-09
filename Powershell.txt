@@ -1,0 +1,82 @@
+``` 
+Different Filtering techniques
+
+1> Using Where-Object
+   The where-Object cmdlets filters objects based on specified
+   criteria.
+Code |
+Get-Process | Where-Object{$_.CPU -gt 10}
+
+This command retrieves all processes and filters them,
+displaying only those wuth CPU usage greater than 10.
+
+2> Filtering with Cmdlet Parameters : 
+Many cmdlets have built-in paramters for Filtering
+more efficient than where - object
+
+Get-Service -Name "Win*"
+
+This command retrieves services whose names start
+with "Win".
+
+3> Combinig filters
+
+4> Filtering early
+
+
+Powershell Modules
+~ self contained , reusable units of code that provide specific
+  functionalitites.
+~ Import-Module cmdlet
+~ Install-Module cmdlet.
+~ Get-Module [retrieve info about modules ,currently loaded in the session , avail for import, or installed].
+~ Get-Module -ListAvailable [to list all available modules]
+
+// Install Modules are stored in
+~  $env:PSModulePath directory.
+
+ "Installing role using Powershell Cmdlets"
+  1> To install ADDS role in Powershell use 
+
+      Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools 
+```
+  2> Promote the server to a Domain controller (Example)
+   
+     Install -ADDSForest  ` -DomainName "ILP.com" ` -InstallDNS
+```
+  Administrative tasks in Domain.
+
+  A> To create a Organizational Unit in Domain
+
+     New -ADOrganizationalUnit -Name "Training" -Path "DC=ILP,DC=com"
+     
+```
+  B> To Create a User inside OU
+
+  1> Create user without setting up password
+     New-ADUser –Name “ShrutikaShinde” –GivenName “Shrutika” –Surname “Shinde” –SamAccountName “shrutikashinde” –UserPrincipalName shrutikashinde@ilp.com –Path “OU=Training,DC=ILP,DC=com”
+  
+  2> $Password = ConvertTo-SecureString "909L39@n7!" -AsPlainText -Force
+     
+     >> New-ADUser –Name "ManojMB" –GivenName "Manoj" –Surname "M B" –SamAccountName "ManojMB" –UserPrincipalName manojmb@ilp.com –Path “OU=Training,DC=ILP,DC=com”
+        -AccountPassword $Password -ChangePasswordAtLogon $true
+  
+  3> Creating user,setting password and enabling the user.
+
+     >> New-ADUser –Name "ManojMB" –GivenName "Manoj" –Surname "M B" –SamAccountName "ManojMB" –UserPrincipalName manojmb@ilp.com –Path “OU=Training,DC=ILP,DC=com”
+        -AccountPassword $Password -ChangePasswordAtLogon $true -Enable $true
+       
+       !user manoj is created as well as the account is enabled.
+    
+   C> Create group inside OU
+
+      New -ADGroup -Name "Faculty" -GroupScope "Global" -GroupCategory "Security" -Path "OU=Training,DC=ILP,DC=com"
+           Description "IT IS Faculty Group" 
+    
+   D>  Adding members to the group
+        
+       1> ONE USER at a time.
+       Add-ADGroupMember -Identity "Faculty" -Members "Shrutikashinde"
+       
+       2> Multiple users at a time.
+       Add-ADGroupMember -Identity "Faculty" -Members "ManojMB, SarikaBegum"

@@ -18,7 +18,9 @@ function createCounter(){
 let counter = createCounter();
 counter();
 counter();
+
 // console.log(count); // error
+
 let message = "Global message"
 
 function showMessage(){

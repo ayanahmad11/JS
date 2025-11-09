@@ -49,7 +49,10 @@ let obj1 = {
         console.log(`Hey my name is ${this.name}`)
     }
 }
-;
+// var name = "Ahmed" //  still in obj.greet()
+// shows undefined bcox in nodejs global represents to empty object
+
+
 let obj2 = {
     "name" :"Ajaz",
     "greet" : ()=>console.log(`Hey my name is ${this.name}`)
